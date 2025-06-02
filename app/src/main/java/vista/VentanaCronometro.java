@@ -4,14 +4,15 @@
  */
 package vista;
 
+import javax.swing.JTextField;
+import logica.Controlador;
+
 /**
  *
  * @author cristian
  */
 public class VentanaCronometro extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaCronometro.class.getName());
-
     /**
      * Creates new form VentanaCronometro
      */
@@ -167,44 +168,31 @@ public class VentanaCronometro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        // TODO add your handling code here:
+        Controlador.iniciar();
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnPausaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPausaActionPerformed
-        // TODO add your handling code here:
+        Controlador.pausa();
     }//GEN-LAST:event_btnPausaActionPerformed
 
     private void btnDetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetenerActionPerformed
-        // TODO add your handling code here:
+        Controlador.detener();
     }//GEN-LAST:event_btnDetenerActionPerformed
 
     private void btnSeguirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeguirActionPerformed
-        // TODO add your handling code here:
+        Controlador.seguir();
     }//GEN-LAST:event_btnSeguirActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    public JTextField getTxtHoras() {
+        return txtHoras;
+    }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new VentanaCronometro().setVisible(true));
+    public JTextField getTxtMinutos() {
+        return txtMinutos;
+    }
+
+    public JTextField getTxtSegundos() {
+        return txtSegundos;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
